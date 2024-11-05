@@ -1,0 +1,1 @@
+{"ckno": ["ckno"], "cknos": ["cknos", "ckno"], "cknor": ["cknor", "ckno"], "cknorw": ["cknorw", "ckno", "cknor"], "cknorsw": ["cknorsw", "ckno", "cknor", "cknorw", "cknos"], "cknotu": ["cknotu", "ckno"], "cknostu": ["cknostu", "ckno", "cknos", "cknotu"], "cknoru": ["cknoru", "ckno", "cknor"], "cknorsu": ["cknorsu", "ckno", "cknor", "cknoru", "cknos"]}
