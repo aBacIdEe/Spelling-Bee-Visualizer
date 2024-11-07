@@ -1,1 +1,1 @@
-{"bhos": ["bhos"], "bhost": ["bhost", "bhos"], "bhostw": ["bhostw", "bhos", "bhost"]}
+{"bhos": ["bhos", "bho", "bo", "bos", "hos"], "bhost": ["bhost", "bho", "bhos", "bhot", "bo", "bos", "bost", "bot", "hos", "host", "hot", "ost", "ot"], "bhostw": ["bhostw", "bho", "bhos", "bhost", "bhot", "bo", "bos", "bost", "bosw", "bot", "bow", "hos", "host", "hosw", "hot", "ost", "ostw", "osw", "ot"]}

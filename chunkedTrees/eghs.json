@@ -1,1 +1,1 @@
-{"eghs": ["eghs"], "eghsu": ["eghsu", "eghs"], "eghstu": ["eghstu", "eghs", "eghsu"]}
+{"eghs": ["eghs", "egh", "egs", "ehs", "es"], "eghsu": ["eghsu", "egh", "eghs", "eghu", "egs", "egsu", "ehs", "ehsu", "es", "esu", "ghsu", "hsu", "su"], "eghstu": ["eghstu", "egh", "eghs", "eghsu", "eghtu", "eghu", "egs", "egst", "egstu", "egsu", "ehs", "ehst", "ehstu", "ehsu", "eht", "es", "est", "estu", "esu", "ghst", "ghstu", "ghsu", "ghtu", "gstu", "hstu", "hsu", "stu", "su", "tu"]}

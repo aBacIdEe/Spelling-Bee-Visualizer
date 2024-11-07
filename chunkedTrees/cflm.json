@@ -1,1 +1,1 @@
-{"cflmru": ["cflmru"], "cflmrsu": ["cflmrsu", "cflmru"]}
+{"cflmru": ["cflmru", "cfu", "clmu", "clru", "clu", "flru", "flu", "fmu", "fru", "lmu", "lu", "mru", "mu"], "cflmrsu": ["cflmrsu", "cflmru", "cfrsu", "cfsu", "cfu", "clmsu", "clmu", "clrsu", "clru", "clsu", "clu", "cmrsu", "cmsu", "crsu", "csu", "flrsu", "flru", "flsu", "flu", "fmrs", "fmrsu", "fmsu", "fmu", "frsu", "fru", "fsu", "lmsu", "lmu", "lrsu", "lsu", "lu", "mrsu", "mru", "msu", "mu", "rsu", "su"]}

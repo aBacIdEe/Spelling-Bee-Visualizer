@@ -1,1 +1,1 @@
-{"fhos": ["fhos"], "fhost": ["fhost", "fhos"], "fhosw": ["fhosw", "fhos"], "fhostu": ["fhostu", "fhos", "fhost"]}
+{"fhos": ["fhos", "fho", "fos", "hos"], "fhost": ["fhost", "fho", "fhos", "fhot", "fos", "fost", "fot", "hos", "host", "hot", "ost", "ot"], "fhosw": ["fhosw", "fho", "fhos", "fos", "fosw", "fow", "hos", "hosw", "osw"], "fhostu": ["fhostu", "fho", "fhos", "fhost", "fhot", "fhsu", "fhu", "fos", "fost", "fot", "fotu", "fstu", "fsu", "ftu", "hos", "host", "hostu", "hot", "hotu", "hstu", "hsu", "ost", "ostu", "osu", "ot", "otu", "stu", "su", "tu"]}

@@ -1,1 +1,1 @@
-{"hmnpy": ["hmnpy"], "hmnpsy": ["hmnpsy", "hmnpy"]}
+{"hmnpy": ["hmnpy", "hmny"], "hmnpsy": ["hmnpsy", "hmnpy", "hmnsy", "hmny", "hpsy"]}

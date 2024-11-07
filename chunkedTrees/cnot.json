@@ -1,1 +1,1 @@
-{"cnotu": ["cnotu", "cnot"], "cnot": ["cnot"], "cnoty": ["cnoty", "cnot"], "cnotuy": ["cnotuy", "cnot", "cnotu", "cnoty"]}
+{"cnotu": ["cnotu", "cno", "cnot", "cntu", "co", "cot", "cotu", "no", "not", "notu", "nou", "ot", "otu", "tu"], "cnot": ["cnot", "cno", "co", "cot", "no", "not", "ot"], "cnoty": ["cnoty", "cno", "cnot", "cnoy", "co", "cot", "no", "not", "noty", "ot"], "cnotuy": ["cnotuy", "cno", "cnot", "cnotu", "cnoty", "cnoy", "cntu", "co", "cot", "cotu", "ctuy", "no", "not", "notu", "noty", "nou", "ntuy", "ot", "otu", "tu", "tuy"]}

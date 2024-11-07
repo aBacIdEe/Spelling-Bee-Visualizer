@@ -1,1 +1,1 @@
-{"ajlr": ["ajlr"], "ajlru": ["ajlru", "ajlr"]}
+{"ajlr": ["ajlr", "ajr", "alr"], "ajlru": ["ajlru", "ajlr", "ajr", "ajru", "alr", "alru", "alu", "aru", "ju", "lu"]}
