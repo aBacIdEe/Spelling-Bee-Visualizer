@@ -1,10 +1,32 @@
-import React, { useState } from 'react';
-import { FixedSizeList as List } from 'react-window';
+import React, { useState, useRef, useEffect} from 'react';
+import { FixedSizeList } from 'react-window';
 import './SearchableDropdown.css'; // Import the CSS file
 
 const SearchableDropdown = ({ items, onItemSelect }) => {
   const [rawInput, setRawInput] = useState(''); // Store raw input
   const [sortedInput, setSortedInput] = useState(''); // Store sorted input
+
+  const containerRef = useRef(null);  // Reference to the parent container
+  const [size, setSize] = useState({ width: 0, height: 0 });
+
+  // Update size when the component is mounted or resized
+  useEffect(() => {
+    const updateSize = () => {
+      if (containerRef.current) {
+        setSize({
+          width: containerRef.current.offsetWidth,
+          height: containerRef.current.offsetHeight,
+        });
+      }
+    };
+
+    updateSize(); // Initial size
+    window.addEventListener('resize', updateSize); // Update size on window resize
+
+    return () => {
+      window.removeEventListener('resize', updateSize); // Cleanup
+    };
+  }, []);
 
   const handleSearch = (event) => {
     const term = event.target.value;
@@ -31,22 +53,15 @@ const SearchableDropdown = ({ items, onItemSelect }) => {
     <button
       style={{
         ...style,
-        display: 'block',
-        width: '100%',
-        textAlign: 'left',
-        background: 'none',
-        border: 'none',
-        padding: '10px',
-        cursor: 'pointer',
       }}
       onClick={() => onItemSelect(filteredItems[index])} // Call the function to set selected item
     >
       {filteredItems[index]}
     </button>
   );
-
+  
   return (
-    <div className="searchable-dropdown">
+    <div className="searchable-dropdown" ref={containerRef}>
       <input
         type="text"
         placeholder="Search..."
@@ -54,14 +69,14 @@ const SearchableDropdown = ({ items, onItemSelect }) => {
         onChange={handleSearch}
       />
       <div className="list-container">
-        <List
-          height={800} // The height of the dropdown
+        <FixedSizeList
+          height={size.height} // The height of the dropdown
           itemCount={filteredItems.length}
           itemSize={35} // The height of each item
-          width={600} // The width of the dropdown
+          width={size.width} // The width of the dropdown
         >
           {Row}
-        </List>
+        </FixedSizeList>
         
         {filteredItems.length === 0 && (
           <p className="no-results">No results found</p>

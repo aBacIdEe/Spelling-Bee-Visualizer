@@ -8,13 +8,28 @@
   font-family: 'Arial', sans-serif;
 }
 
+html {
+  overflow-x: hidden;
+}
+
+.page-outer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: 100vw;
+  background-color: #f4f7fb;
+  overflow-x: hidden;
+}
+
 /* Page Container */
 .page-container {
   display: flex;
   justify-content: space-between;
   align-items: stretch;  /* Ensures both sides stretch to fill the screen height */
-  width: 100vw;
-  height: 100vh; /* Fill the viewport height */
+  width: 80vw;
+  height: 100%; /* Fill the viewport height */
+  min-height: 100vh; /* Minimum height of the container */
   gap: 30px;
   padding: 20px;
   background-color: #f4f7fb;
@@ -32,7 +47,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  overflow: auto; /* Ensure content doesn't overflow the container */
+  overflow: hidden; /* Ensure content doesn't overflow the container */
 }
 
 .left-side h1, .right-side h1 {
@@ -52,6 +67,86 @@
   border-radius: 4px;
   background-color: #fafafa;
 }
+
+/* Container for the segmented control */
+.segmented-control {
+  display: inline-flex;  /* Use inline-flex so the container only takes up space for the buttons */
+  gap: 2px;  /* Small gap between buttons */
+  border-radius: 25px;  /* Rounded edges for the whole control */
+  background-color: #e7e7e7;  /* Light green background for the control */
+  padding: 4px;
+  box-shadow: none;  /* No shadow for a clean, flush look */
+  justify-content: flex-start; /* Center the buttons horizontally */
+}
+
+/* Individual button inside segmented control */
+.segmented-button {
+  border-radius: 0%;
+  background-color: transparent;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 200px; /* Fixed width */
+  height: 40px; /* Fixed height */
+  margin: 0; /* Remove any default margins */
+  flex: 1; /* Ensure all buttons are the same size */
+  border: none; /* Remove borders */
+}
+
+/* Hover state for button */
+.segmented-button:hover {
+  background-color: #babdb6; /* Lighter green on hover */
+  border: none;
+}
+
+.segmented-button:focus {
+  outline: none; /* Remove default focus outline */
+}
+
+/* Selected button state */
+.segmented-button.selected {
+  background-color: #0c88db; /* Darker green for selected button */
+  color: white; /* White text for selected button */
+  border: none;
+}
+
+/* Add rounded corners to the first and last button only */
+.segmented-button:first-child {
+  border-top-left-radius: 25px; /* Round top-left corner of the first button */
+  border-bottom-left-radius: 25px; /* Round bottom-left corner of the first button */
+}
+
+.segmented-button:last-child {
+  border-top-right-radius: 25px; /* Round top-right corner of the last button */
+  border-bottom-right-radius: 25px; /* Round bottom-right corner of the last button */
+}
+
+/* Styling for the text inside the button */
+.character-button-text {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 6px; /* Offset */
+  text-transform: uppercase;  /* Uniform character appearance */
+  color: inherit; /* Text color inherits from parent */
+}
+
+/* Style for the heading text */
+.segmented-control p {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
 
 /* Responsive design for small screens */
 @media (max-width: 768px) {

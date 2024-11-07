@@ -8,6 +8,8 @@ import SearchableDropdown from "./components/SearchableDropdown";
 function App() {
   const [items, setItems] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null); // State to hold selected item
+  const [subSelectedItem, setSubSelectedItem] = useState(null); // State to hold selected sub-item
+  const [selectedCharacters, setSelectedCharacters] = useState([]);
   const [selectedQueries, setSelectedQueries] = useState([]); // State to hold selected queries
   const [selectedWords, setSelectedWords] = useState([]); // State to hold selected word
 
@@ -37,6 +39,8 @@ function App() {
 
   const handleItemSelect = async (item) => {
     setSelectedItem(item);
+    setSubSelectedItem(item);
+    setSelectedCharacters([]); // Clear the selected characters
 
     // Make the fetch call asynchronously, using the updated 'item' directly
     try {
@@ -103,8 +107,30 @@ function App() {
     return [...new Set(word)].sort().join("");
   };
 
+  // Function to handle the toggle of selected characters
+  const handleCharacterToggle = (character) => {
+    setSelectedCharacters(
+      (prevState) =>
+        prevState.includes(character)
+          ? prevState.filter((char) => char !== character) // Remove character if already selected
+          : [...prevState, character] // Add character if not selected
+    );
+  };
+
+  const passesFilter = (word) => {
+    return selectedCharacters.every((char) => word.includes(char));
+  }
+
+  const decideColor = (word) => {
+    if (containsAllChars(word, subSelectedItem)) {
+      return "red";
+    } else {
+      return "inherit";
+    }
+  }
+
   return (
-    <>
+    <div className="page-outer-container">
       <div className="page-container">
         <div className="left-side">
           <h1>Search & Dropdown</h1>
@@ -121,39 +147,57 @@ function App() {
         </div>
         <div className="right-side">
           <h1>Words List</h1>
-          {selectedItem && <p>Selected Word: {selectedItem}</p>}
+          {selectedItem && (
+            <>
+              <p>Filter by Character:</p>
+              <div className="segmented-control"
+                style={{width: `${selectedItem.length * 50}px` }} // Dynamic width calculation based on button count
+              >
+                {selectedItem.split("").map((char, index) => (
+                  <button
+                    key={index}
+                    className={`segmented-button ${
+                      selectedCharacters.includes(char) ? "selected" : ""
+                    }`}
+                    onClick={() => handleCharacterToggle(char)}
+                  >
+                    <p className="character-button-text">{char}</p>
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
           {selectedItem == null && <p>Select an item to view words</p>}
           {/* {selectedQueries.length > 0 && (
             <p>Sub-words: {selectedQueries.join(" ")}</p>
           )} */}
           {selectedWords.length > 0 && (
-            <p>
-              Words:{" "}
-              {selectedWords.map((word, index) => (
-                <span
-                  key={index}
-                  onClick={() => { // Call setSelectedItem on click
-                    setSelectedItem(removeDuplicateAndSortCharacters(word))
-                  }} 
-                  style={{
-                    color: containsAllChars(word, selectedItem)
-                      ? "red"
-                      : "inherit",
-                    cursor: "pointer", // Make the word look clickable
-                    padding: "0 5px", // Add some space between the words
-                    borderRadius: "4px", // Optional: for a rounded appearance
-                  }}
-                >
-                  {word}
-                  {index < selectedWords.length - 1 && " "}
-                </span>
-              ))}
-            </p>
+            <p style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '10px' }}>
+            {selectedWords.map((word, index) => (
+              <span
+                key={index}
+                onClick={() => {
+                  // Call setSubSelectedItem on click
+                  setSubSelectedItem(removeDuplicateAndSortCharacters(word));
+                }}
+                style={{
+                  color: decideColor(word),
+                  cursor: 'pointer', // Make the word look clickable
+                  display: 'inline-block',
+                }}
+              >
+                {passesFilter(word) ? word : "---"}
+                {index < selectedWords.length - 1 && ''}
+              </span>
+            ))}
+          </p>
           )}
-          {selectedItem != null && selectedWords.length === 0 && <p>Loading words...</p>}
+          {selectedItem != null && selectedWords.length === 0 && (
+            <p>Loading words...</p>
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
