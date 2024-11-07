@@ -1,1 +1,1 @@
-{"hpsu": ["hpsu"], "hpsuy": ["hpsuy", "hpsu"], "hpsuw": ["hpsuw", "hpsu"]}
+{"hpsu": ["hpsu", "hsu", "psu", "su"], "hpsuy": ["hpsuy", "hpsu", "hpsy", "hsu", "hsuy", "psu", "psuy", "puy", "su"], "hpsuw": ["hpsuw", "hpsu", "hpuw", "hsu", "psu", "su", "suw"]}

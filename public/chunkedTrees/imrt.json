@@ -1,1 +1,1 @@
-{"imrt": ["imrt"], "imrtu": ["imrtu", "imrt"], "imrtuv": ["imrtuv", "imrt", "imrtu"], "imrtuy": ["imrtuy", "imrt", "imrtu"]}
+{"imrt": ["imrt", "imt", "it"], "imrtu": ["imrtu", "imrt", "imt", "it", "itu", "mru", "mtu", "mu", "tu"], "imrtuv": ["imrtuv", "imrt", "imrtu", "imt", "irtuv", "it", "itu", "iv", "mru", "mtu", "mu", "tu"], "imrtuy": ["imrtuy", "imrt", "imrtu", "imry", "imt", "it", "itu", "ity", "mru", "mruy", "mtu", "mtuy", "mu", "muy", "rtuy", "tu", "tuy"]}

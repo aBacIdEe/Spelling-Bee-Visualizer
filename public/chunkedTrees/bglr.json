@@ -1,1 +1,1 @@
-{"bglru": ["bglru"], "bglrsu": ["bglrsu", "bglru"]}
+{"bglru": ["bglru", "bgru", "blru", "blu", "bru", "glu", "gru", "lu"], "bglrsu": ["bglrsu", "bglru", "bgrsu", "bgru", "bgsu", "blrsu", "blru", "blsu", "blu", "brsu", "bru", "bsu", "glsu", "glu", "grsu", "gru", "lrsu", "lsu", "lu", "rsu", "su"]}

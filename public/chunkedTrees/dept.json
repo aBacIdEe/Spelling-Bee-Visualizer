@@ -1,1 +1,1 @@
-{"dept": ["dept"], "deptu": ["deptu", "dept"], "deptuy": ["deptuy", "dept", "deptu", "depty"], "depty": ["depty", "dept"]}
+{"dept": ["dept", "de", "dep", "det", "ep", "ept"], "deptu": ["deptu", "de", "dep", "dept", "depu", "det", "detu", "deu", "ep", "ept", "eptu", "ptu", "tu"], "deptuy": ["deptuy", "de", "dep", "dept", "deptu", "depty", "depu", "det", "detu", "dety", "deu", "dey", "dpuy", "dtuy", "ep", "ept", "eptu", "epty", "epy", "ptu", "ptuy", "puy", "tu", "tuy"], "depty": ["depty", "de", "dep", "dept", "det", "dety", "dey", "ep", "ept", "epty", "epy"]}

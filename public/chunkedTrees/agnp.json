@@ -1,1 +1,1 @@
-{"agnp": ["agnp"], "agnps": ["agnps", "agnp"], "agnpr": ["agnpr", "agnp"], "agnprs": ["agnprs", "agnp", "agnpr", "agnps"]}
+{"agnp": ["agnp", "ag", "agn", "an", "ap"], "agnps": ["agnps", "ag", "agn", "agnp", "agns", "agps", "ags", "an", "anps", "ans", "ap", "aps", "as"], "agnpr": ["agnpr", "ag", "agn", "agnp", "agnr", "agpr", "agr", "an", "anpr", "ap", "apr"], "agnprs": ["agnprs", "ag", "agn", "agnp", "agnpr", "agnps", "agnr", "agnrs", "agns", "agpr", "agprs", "agps", "agr", "agrs", "ags", "an", "anpr", "anps", "anrs", "ans", "ap", "apr", "aprs", "aps", "ars", "as"]}

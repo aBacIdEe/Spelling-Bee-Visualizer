@@ -1,1 +1,1 @@
-{"cflpu": ["cflpu"], "cflpsu": ["cflpsu", "cflpu"]}
+{"cflpu": ["cflpu", "cfu", "clu", "flu", "fpu", "lpu", "lu"], "cflpsu": ["cflpsu", "cflpu", "cfsu", "cfu", "clpsu", "clsu", "clu", "cpsu", "csu", "flsu", "flu", "fpsu", "fpu", "fsu", "lpsu", "lpu", "lsu", "lu", "psu", "su"]}

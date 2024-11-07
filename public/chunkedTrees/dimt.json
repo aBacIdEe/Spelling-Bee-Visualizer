@@ -1,1 +1,1 @@
-{"dimty": ["dimty", "dimt"], "dimtw": ["dimtw", "dimt"], "dimt": ["dimt"], "dimtu": ["dimtu", "dimt"], "dimtuy": ["dimtuy", "dimt", "dimtu", "dimty"]}
+{"dimty": ["dimty", "dim", "dimt", "dimy", "dity", "imt", "it", "ity"], "dimtw": ["dimtw", "dim", "dimt", "imt", "it", "itw"], "dimt": ["dimt", "dim", "imt", "it"], "dimtu": ["dimtu", "dim", "dimt", "dmu", "imt", "it", "itu", "mtu", "mu", "tu"], "dimtuy": ["dimtuy", "dim", "dimt", "dimtu", "dimty", "dimuy", "dimy", "dity", "dmu", "dmuy", "dtuy", "imt", "it", "itu", "ity", "mtu", "mtuy", "mu", "muy", "tu", "tuy"]}

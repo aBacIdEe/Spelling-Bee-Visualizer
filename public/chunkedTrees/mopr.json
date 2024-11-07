@@ -1,1 +1,1 @@
-{"mopr": ["mopr"], "moprs": ["moprs", "mopr"], "moprt": ["moprt", "mopr"], "moprst": ["moprst", "mopr", "moprs", "moprt"]}
+{"mopr": ["mopr", "mop", "mor", "op", "opr"], "moprs": ["moprs", "mop", "mopr", "mops", "mor", "mors", "mos", "op", "opr", "oprs", "ops"], "moprt": ["moprt", "mop", "mopr", "mor", "mort", "mot", "op", "opr", "oprt", "opt", "ort", "ot"], "moprst": ["moprst", "mop", "mopr", "moprs", "moprt", "mops", "mopst", "mor", "mors", "morst", "mort", "mos", "most", "mot", "op", "opr", "oprs", "oprst", "oprt", "ops", "opst", "opt", "orst", "ort", "ost", "ot", "pst"]}

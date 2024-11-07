@@ -1,1 +1,1 @@
-{"klno": ["klno"], "klnos": ["klnos", "klno"], "klnop": ["klnop", "klno"], "klnops": ["klnops", "klno", "klnop", "klnos"]}
+{"klno": ["klno", "klo", "kno", "ko", "lno", "lo", "no"], "klnos": ["klnos", "klno", "klo", "klos", "kno", "knos", "ko", "kos", "lno", "lnos", "lo", "los", "no", "nos"], "klnop": ["klnop", "klno", "klo", "kno", "knop", "ko", "lno", "lo", "lop", "no", "nop", "op"], "klnops": ["klnops", "klno", "klnop", "klnos", "klo", "klos", "kno", "knop", "knos", "ko", "kops", "kos", "lno", "lnos", "lo", "lop", "lops", "los", "no", "nop", "nops", "nos", "op", "ops"]}

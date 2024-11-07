@@ -1,0 +1,71 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Style for the main container of the dropdown */
+.searchable-dropdown {
+  position: relative;
+  margin: 0 auto;
+}
+
+/* Style for the input field */
+.searchable-dropdown input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.searchable-dropdown input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Style for the dropdown list container */
+.searchable-dropdown .list-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for each item in the dropdown list */
+.searchable-dropdown .list-container button {
+  width: 100%;
+  text-align: left;
+  background-color: #fff;
+  border: none;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.searchable-dropdown .list-container button:hover {
+  background-color: #c2c2c2;
+  color: #007bff;
+}
+
+.searchable-dropdown .list-container button:focus {
+  outline: none;
+  background-color: #c2c2c2;
+}
+
+/* Style for the "No results found" message */
+.searchable-dropdown .no-results {
+  padding: 10px;
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+}

@@ -1,1 +1,1 @@
-{"inst": ["inst"], "instu": ["instu", "inst"], "instw": ["instw", "inst"], "instuw": ["instuw", "inst", "instu", "instw"]}
+{"inst": ["inst", "ins", "int", "ist", "it"], "instu": ["instu", "ins", "inst", "insu", "int", "intu", "ist", "istu", "it", "itu", "nstu", "nsu", "stu", "su", "tu"], "instw": ["instw", "ins", "inst", "insw", "int", "intw", "ist", "istw", "isw", "it", "itw"], "instuw": ["instuw", "ins", "inst", "instu", "instw", "insu", "insw", "int", "intu", "intw", "ist", "istu", "istw", "isw", "it", "itu", "itw", "nstu", "nsu", "stu", "su", "suw", "tu"]}

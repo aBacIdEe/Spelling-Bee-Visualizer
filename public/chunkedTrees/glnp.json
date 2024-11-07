@@ -1,1 +1,1 @@
-{"glnpu": ["glnpu"], "glnpsu": ["glnpsu", "glnpu"]}
+{"glnpu": ["glnpu", "glnu", "glpu", "glu", "gnpu", "lnu", "lpu", "lu"], "glnpsu": ["glnpsu", "glnpu", "glnsu", "glnu", "glpsu", "glpu", "glsu", "glu", "gnpsu", "gnpu", "gnsu", "gpsu", "lnsu", "lnu", "lpsu", "lpu", "lsu", "lu", "npsu", "nsu", "psu", "su"]}

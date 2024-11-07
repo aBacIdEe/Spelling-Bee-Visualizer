@@ -1,1 +1,1 @@
-{"acgt": ["acgt"], "acgtu": ["acgtu", "acgt"]}
+{"acgt": ["acgt", "act", "ag"], "acgtu": ["acgtu", "acgt", "act", "ag", "agtu", "atu", "tu"]}

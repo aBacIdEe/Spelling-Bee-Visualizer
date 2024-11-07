@@ -1,1 +1,1 @@
-{"imst": ["imst"], "imsty": ["imsty", "imst"], "imstu": ["imstu", "imst"], "imstuw": ["imstuw", "imst", "imstu"]}
+{"imst": ["imst", "ims", "imt", "ist", "it"], "imsty": ["imsty", "ims", "imst", "imsy", "imt", "ist", "isy", "it", "ity", "sty"], "imstu": ["imstu", "ims", "imst", "imsu", "imt", "ist", "istu", "it", "itu", "mstu", "msu", "mtu", "mu", "stu", "su", "tu"], "imstuw": ["imstuw", "ims", "imst", "imstu", "imsu", "imsw", "imt", "ist", "istu", "istw", "isw", "it", "itu", "itw", "mstu", "msu", "msuw", "mtu", "mu", "stu", "su", "suw", "tu"]}

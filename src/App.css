@@ -1,42 +1,75 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* App.css */
+
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Page Container */
+.page-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;  /* Ensures both sides stretch to fill the screen height */
+  width: 100vw;
+  height: 100vh; /* Fill the viewport height */
+  gap: 30px;
+  padding: 20px;
+  background-color: #f4f7fb;
+  flex-wrap: wrap;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Left Section Styles */
+.left-side, .right-side {
+  flex: 1; /* Ensures both left and right sides are of equal width */
+  min-height: 0; /* Prevents content from overflowing if it doesn't fill the container */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow: auto; /* Ensure content doesn't overflow the container */
+}
+
+.left-side h1, .right-side h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.left-side p, .right-side p {
+  font-size: 16px;
+  color: #555;
+}
+
+.left-side .dropdown-container {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #fafafa;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+  .page-container {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .left-side, .right-side {
+    width: 100%;
+    margin-bottom: 20px;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .left-side h1, .right-side h1 {
+    font-size: 22px;
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .left-side p, .right-side p {
+    font-size: 14px;
+  }
 }

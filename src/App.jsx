@@ -7,9 +7,9 @@ import SearchableDropdown from "./components/SearchableDropdown";
 
 function App() {
   const [items, setItems] = useState([]);
-  const [data, setData] = useState([]); // State to hold the JSON data
   const [selectedItem, setSelectedItem] = useState(null); // State to hold selected item
   const [selectedQueries, setSelectedQueries] = useState([]); // State to hold selected queries
+  const [selectedWords, setSelectedWords] = useState([]); // State to hold selected word
 
   // const url = '/projects/words.json'; // Change to your JSON file path
   // // Hook to store data in IndexedDB
@@ -45,51 +45,113 @@ function App() {
       );
 
       if (!res.ok) {
-        // Handle error response
         console.error("Failed to fetch data:", res.statusText);
         return;
       }
 
       const data = await res.json(); // Parse the JSON response
-      setSelectedQueries(data[item]); // Set the queries based on the 'item' key
-      // console.log(data); // Log the full data for debugging
-      // console.log(data[item]); // Log the specific query set for the selected item
+      setSelectedQueries(data[item]);
+
+      setSelectedWords([]); // Clear the selected words
+
+      // Collect words in an array
+      const wordsArray = [];
+
+      for (let i = 0; i < data[item].length; i++) {
+        const res2 = await fetch(
+          `/projects/chunkedWords/${data[item][i].slice(0, 4)}.json`
+        );
+
+        if (!res2.ok) {
+          console.error("Failed to fetch data:", res2.statusText);
+          return;
+        }
+
+        const words = await res2.json();
+        wordsArray.push(...words[data[item][i]]);
+      }
+
+      // Sort words alphabetically (case-insensitive)
+      wordsArray.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+
+      setSelectedWords(wordsArray); // Update the state with sorted words
+      // console.log(wordsArray); // Log the selected words
     } catch (error) {
       console.error("Error during fetch:", error);
     }
-    // const results = useQueryData(selectedItem); // Replace with actual field and value
+  };
+
+  // Helper function to check if word contains all characters in selectedItem
+  const containsAllChars = (word, selectedItem) => {
+    // Create a map of character counts for selectedItem
+    const charCount = {};
+    for (let char of selectedItem) {
+      charCount[char] = (charCount[char] || 0) + 1;
+    }
+
+    // Check if word contains all the characters with the required counts
+    for (let char of selectedItem) {
+      if (!word.includes(char)) {
+        return false; // If any character is missing, return false
+      }
+    }
+    return true;
+  };
+
+  // Helper function to make a word into its character format
+  const removeDuplicateAndSortCharacters = (word) => {
+    return [...new Set(word)].sort().join("");
   };
 
   return (
     <>
-      <div>
-        <h1>Search & Dropdown</h1>
-        <p>Selected Item: {selectedItem}</p>
-        {items.length > 0 ? (
-          <SearchableDropdown items={items} onItemSelect={handleItemSelect} />
-        ) : (
-          <p>Loading items...</p>
-        )}
-      </div>
-      <div>
-        <h1>Words List</h1>
-        {selectedItem && <p>Selected Word: {selectedItem}</p>}
-        {selectedQueries.length > 0 && <p>Sub-words: {selectedQueries.join(" ")}</p>}
-        {/* {Object.keys(data).length > 0 ? (
-        <div>
-          {Object.keys(data).map(category => (
-            <div key={category}>
-              <h2>{category}</h2>
-              <SearchableDropdown 
-                items={data[category]} 
-                onItemSelect={handleItemSelect} 
-              />
-            </div>
-          ))}
+      <div className="page-container">
+        <div className="left-side">
+          <h1>Search & Dropdown</h1>
+          <p>Selected Item: {selectedItem}</p>
+          {items.length > 0 ? (
+            <SearchableDropdown
+              items={items}
+              onItemSelect={handleItemSelect}
+              style={App.SearchableDropdown}
+            />
+          ) : (
+            <p>Loading items...</p>
+          )}
         </div>
-      ) : (
-        <p>Loading data...</p>
-      )} */}
+        <div className="right-side">
+          <h1>Words List</h1>
+          {selectedItem && <p>Selected Word: {selectedItem}</p>}
+          {selectedItem == null && <p>Select an item to view words</p>}
+          {/* {selectedQueries.length > 0 && (
+            <p>Sub-words: {selectedQueries.join(" ")}</p>
+          )} */}
+          {selectedWords.length > 0 && (
+            <p>
+              Words:{" "}
+              {selectedWords.map((word, index) => (
+                <span
+                  key={index}
+                  onClick={() => { // Call setSelectedItem on click
+                    setSelectedItem(removeDuplicateAndSortCharacters(word))
+                  }} 
+                  style={{
+                    color: containsAllChars(word, selectedItem)
+                      ? "red"
+                      : "inherit",
+                    cursor: "pointer", // Make the word look clickable
+                    padding: "0 5px", // Add some space between the words
+                    borderRadius: "4px", // Optional: for a rounded appearance
+                  }}
+                >
+                  {word}
+                  {index < selectedWords.length - 1 && " "}
+                </span>
+              ))}
+            </p>
+          )}
+          {selectedItem != null && selectedWords.length === 0 && <p>Loading words...</p>}
+        </div>
       </div>
     </>
   );

@@ -1,1 +1,1 @@
-{"cegpu": ["cegpu"], "cegpsu": ["cegpsu", "cegpu"]}
+{"cegpu": ["cegpu", "cepu", "ep"], "cegpsu": ["cegpsu", "cegpu", "ceps", "cepu", "ces", "cesu", "cpsu", "csu", "egps", "egs", "egsu", "ep", "eps", "epsu", "es", "esu", "gpsu", "psu", "su"]}
