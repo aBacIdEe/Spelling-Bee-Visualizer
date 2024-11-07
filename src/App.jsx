@@ -119,7 +119,7 @@ function App() {
 
   const passesFilter = (word) => {
     return selectedCharacters.every((char) => word.includes(char));
-  }
+  };
 
   const decideColor = (word) => {
     if (containsAllChars(word, subSelectedItem)) {
@@ -127,7 +127,7 @@ function App() {
     } else {
       return "inherit";
     }
-  }
+  };
 
   return (
     <div className="page-outer-container">
@@ -150,8 +150,9 @@ function App() {
           {selectedItem && (
             <>
               <p>Filter by Character:</p>
-              <div className="segmented-control"
-                style={{width: `${selectedItem.length * 50}px` }} // Dynamic width calculation based on button count
+              <div
+                className="segmented-control"
+                style={{ width: `${selectedItem.length * 50}px` }} // Dynamic width calculation based on button count
               >
                 {selectedItem.split("").map((char, index) => (
                   <button
@@ -172,25 +173,49 @@ function App() {
             <p>Sub-words: {selectedQueries.join(" ")}</p>
           )} */}
           {selectedWords.length > 0 && (
-            <p style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '10px' }}>
-            {selectedWords.map((word, index) => (
-              <span
-                key={index}
-                onClick={() => {
-                  // Call setSubSelectedItem on click
-                  setSubSelectedItem(removeDuplicateAndSortCharacters(word));
-                }}
-                style={{
-                  color: decideColor(word),
-                  cursor: 'pointer', // Make the word look clickable
-                  display: 'inline-block',
-                }}
-              >
-                {passesFilter(word) ? word : "---"}
-                {index < selectedWords.length - 1 && ''}
-              </span>
-            ))}
+            <p
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(5, 1fr)', // 5 columns
+              gap: '10px',
+            }}
+          >
+            {Array.from({ length: 5 }).map((_, colIndex) => {
+              // Calculate base number of words per column
+              const baseCount = Math.floor(selectedWords.length / 5);
+              
+              // Calculate the number of columns that should have one extra word
+              const extraCount = selectedWords.length % 5;
+              
+              // Determine the start and end index for the current column
+              const startIdx = colIndex * baseCount + Math.min(colIndex, extraCount);
+              const endIdx = startIdx + baseCount + (colIndex < extraCount ? 1 : 0);
+              
+              // Slice the selectedWords array to get the words for the current column
+              const columnWords = selectedWords.slice(startIdx, endIdx);
+              
+              return (
+                <div key={colIndex} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {columnWords.map((word, wordIndex) => (
+                    <span
+                      key={wordIndex}
+                      onClick={() => {
+                        // Call setSubSelectedItem on click
+                        setSubSelectedItem(removeDuplicateAndSortCharacters(word));
+                      }}
+                      style={{
+                        color: decideColor(word),
+                        cursor: 'pointer', // Make the word look clickable
+                      }}
+                    >
+                      {passesFilter(word) ? word : "---"}
+                    </span>
+                  ))}
+                </div>
+              );
+            })}
           </p>
+          
           )}
           {selectedItem != null && selectedWords.length === 0 && (
             <p>Loading words...</p>
