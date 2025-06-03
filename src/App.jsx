@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 import SearchableDropdown from "./components/SearchableDropdown";
@@ -13,7 +13,7 @@ function App() {
   const [selectedQueries, setSelectedQueries] = useState([]); // State to hold selected queries
   const [selectedWords, setSelectedWords] = useState([]); // State to hold selected word
 
-  // const url = '/projects/words.json'; // Change to your JSON file path
+  // const url = '/Spelling-Bee-Visualizer/words.json'; // Change to your JSON file path
   // // Hook to store data in IndexedDB
   // useStoreData(url);
 
@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await fetch("/projects/validCombos.txt");
+        const response = await fetch("validCombos.txt");
         const text = await response.text();
         const itemsArray = text
           .split("\n")
@@ -45,7 +45,7 @@ function App() {
     // Make the fetch call asynchronously, using the updated 'item' directly
     try {
       const res = await fetch(
-        `/projects/chunkedTrees/${item.slice(0, 4)}.json`
+        `chunkedTrees/${item.slice(0, 4)}.json`
       );
 
       if (!res.ok) {
@@ -63,7 +63,7 @@ function App() {
 
       for (let i = 0; i < data[item].length; i++) {
         const res2 = await fetch(
-          `/projects/chunkedWords/${data[item][i].slice(0, 4)}.json`
+          `chunkedWords/${data[item][i].slice(0, 4)}.json`
         );
 
         if (!res2.ok) {
